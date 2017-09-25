@@ -1,12 +1,15 @@
-# Spring Boot autoconfiguration for Ektorp
+image:https://travis-ci.org/pcvolkmer/spring-boot-ektorp.svg?branch=master["Build Status", link="https://travis-ci.org/pcvolkmer/spring-boot-ektorp"]
+
+= Spring Boot autoconfiguration for Ektorp
 
 The primary goal of this project is Spring Boot auto configuration for [Ektorp](https://github.com/helun/Ektorp).
 
-## Usage
+== Usage
 
 Add this project as dependency to your project and add some configuration, e.g.:
 
-```
+[source,yaml]
+----
 spring:
   ektorp:
     client:
@@ -14,13 +17,14 @@ spring:
       username: me
       password: secret
     defaultDatabase: my-database
-```
+----
 
 This will provide a ready to use `CouchDbConnector`.
 
 If more than one database should be used, a more complex configuration can be done with a Java-config like this:
-```java
 
+[source,java]
+----
 @Configuration
 class CouchDbConfig {
 
@@ -35,13 +39,12 @@ class CouchDbConfig {
     }
 
 }
-
-```
+----
 
 Those different connectors can be used with Repositories as been shown in this example:
 
-```java
-
+[source,java]
+----
 @Repository
 class DataRepository extends CouchDbRepositorySupport<Data> {
 
@@ -52,5 +55,4 @@ class DataRepository extends CouchDbRepositorySupport<Data> {
     }
 
 }
-
-```
+----
