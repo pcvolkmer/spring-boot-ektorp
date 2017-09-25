@@ -1,0 +1,4 @@
+allprojects {
+    group = 'de.pcvolkmer.spring'
+    version = '0.1.0.BUILD-SNAPSHOT'
+}

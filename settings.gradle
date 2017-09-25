@@ -1,0 +1,1 @@
+include 'spring-boot-starter-ektorp', 'spring-boot-autoconfigure-ektorp'
