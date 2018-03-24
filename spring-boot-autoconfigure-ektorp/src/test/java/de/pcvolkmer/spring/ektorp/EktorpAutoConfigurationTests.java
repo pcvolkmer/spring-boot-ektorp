@@ -19,9 +19,7 @@ import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
 import org.ektorp.http.HttpClient;
 import org.junit.After;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.springframework.boot.test.util.EnvironmentTestUtils;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -49,12 +47,12 @@ public class EktorpAutoConfigurationTests {
         assertNotNull(httpClient);
     }
 
-	@Test
-	public void testShouldCreateCouchDbInstance() {
+    @Test
+    public void testShouldCreateCouchDbInstance() {
         load("spring.ektorp.client.url=http://localhost:5984");
         CouchDbInstance instance = this.context.getBean(CouchDbInstance.class);
         assertNotNull(instance);
-	}
+    }
 
     @Test
     public void testShouldCreateCouchDbConnector() {
@@ -64,7 +62,7 @@ public class EktorpAutoConfigurationTests {
     }
 
     @Test
-    public void testShouldThrowExceptionOnMissingClientUrl() throws Exception{
+    public void testShouldThrowExceptionOnMissingClientUrl() throws Exception {
         try {
             load();
             this.context.getBean(CouchDbInstance.class);
@@ -77,7 +75,7 @@ public class EktorpAutoConfigurationTests {
     }
 
     @Test
-    public void testShouldThrowExceptionOnEmptyDefaultDatabaseName() throws Exception{
+    public void testShouldThrowExceptionOnEmptyDefaultDatabaseName() throws Exception {
         try {
             load(
                     "spring.ektorp.client.url=http://localhost:5984",
@@ -92,7 +90,7 @@ public class EktorpAutoConfigurationTests {
         }
     }
 
-	private void load(String ... environment) {
+    private void load(String... environment) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         EnvironmentTestUtils.addEnvironment(applicationContext, environment);
         applicationContext.register(EktorpAutoConfiguration.class);

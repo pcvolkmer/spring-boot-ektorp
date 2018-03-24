@@ -2,11 +2,11 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	compile("de.pcvolkmer.spring:spring-boot-autoconfigure-ektorp:${version}")
+    compile("de.pcvolkmer.spring:spring-boot-autoconfigure-ektorp:${version}")
 }
 
 publishing {

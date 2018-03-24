@@ -16,11 +16,11 @@
 package de.pcvolkmer.spring.ektorp;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.validation.annotation.Validated;
 
 import java.net.URL;
 
-/** Configuration properties for ektorp
+/**
+ * Configuration properties for ektorp
  *
  * @author Paul-Christian Volkmer
  * @since 0.1
